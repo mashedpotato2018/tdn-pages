@@ -1,0 +1,36 @@
+{
+  "name": "tdn-pages",
+  "version": "0.1.0",
+  "description": "static web app workflow",
+  "keywords": [
+    "tdn-pages",
+    "zce"
+  ],
+  "homepage": "https://github.com/mashedpotato2018/tdn-pages#readme",
+  "bugs": {
+    "url": "https://github.com/mashedpotato2018/tdn-pages/issues"
+  },
+  "license": "MIT",
+  "author": "tdn <2387083001@qq.com>",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mashedpotato2018/tdn-pages.git"
+  },
+  "scripts": {
+    "lint": "standard --fix"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^14.3.4"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}

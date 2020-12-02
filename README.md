@@ -20,13 +20,97 @@ $ yarn add tdn-pages
 
 ## Usage
 
-<!-- TODO: Introduction of API use -->
+有三个命令可以使用
+
+  tdn-pages clean 
+
+清除构建文件夹 
+
+  tdn-pages  develop 
+
+静态开发网页 会开启开发服务器，提供热更新
+
+支持e6+和scss开发
+
+  tdn-pages  build
+
+构建生产环境代码
+
+
+
+在根目录添加文件pages.config.js 可以配置初始化 文件路径和文件名称和页面数据
+
+默认为
 
 ```javascript
-const tdnPages = require('tdn-pages')
-const result = tdnPages('zce')
-// result => 'zce@zce.me'
+module.exports = {
+    build: {
+        // 代码开发路径
+        src: 'src',
+        // 生产路径
+        dist: 'dist',
+        // 临时文件路径
+        temp: 'temp',
+        // 公共文件路径
+        public: 'public',
+        paths: {
+            // 样式
+            styles: 'assets/styles/*.scss',
+            // js
+            scripts: 'assets/scripts/*.js', 
+            // 页面
+            pages: '*.html', 
+            // 图片
+            images: 'assets/images/**',
+            // 字体
+            fonts: 'assets/fonts/**',
+        }
+    },
+    // 页面渲染引擎数据
+    data: {
+        menus: [
+            {
+                name: 'Home',
+                icon: 'aperture',
+                link: 'index.html'
+            },
+            {
+                name: 'Features',
+                link: 'features.html'
+            },
+            {
+                name: 'About',
+                link: 'about.html'
+            },
+            {
+                name: 'Contact',
+                link: '#',
+                children: [
+                    {
+                        name: 'Twitter',
+                        link: 'https://twitter.com/w_zce'
+                    },
+                    {
+                        name: 'About',
+                        link: 'https://weibo.com/zceme'
+                    },
+                    {
+                        name: 'divider'
+                    },
+                    {
+                        name: 'About',
+                        link: 'https://github.com/zce'
+                    }
+                ]
+            }
+        ],
+        pkg: require('./package.json'),
+        date: new Date()
+    }
+}
 ```
+
+
 
 ## API
 
